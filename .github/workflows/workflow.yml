@@ -18,6 +18,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'  # Adjust the version as needed
+          distribution: 'openjdk'
 
       # Step 4: Compile the Test.java file
       - name: Compile Test.java
