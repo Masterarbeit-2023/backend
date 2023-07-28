@@ -22,11 +22,11 @@ jobs:
 
       # Step 4: Compile the Test.java file
       - name: Compile Test.java
-        run: javac src/main/java/com/example/backend/Test.java
+        run: javac com.example.library.LibraryApplication.java
 
       # Step 5: Run the Test class
       - name: Run Test.java
-        run: java -cp src/main/java com.example.backend.Test
+        run: java -cp com.example.library.LibraryApplication.Test
   build:
     runs-on: ubuntu-latest
     steps:  
