@@ -17,7 +17,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v2
         with:
-          java-version: '11'  # Adjust the version as needed
+          java-version: '17'  # Adjust the version as needed
           distribution: 'adopt'
       - name: Build with Maven   # Replace this with your build tool (e.g., Gradle)
         run: mvn clean package   # Adjust the build command as per your project setup
