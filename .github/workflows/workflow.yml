@@ -23,7 +23,7 @@ jobs:
         run: mvn clean package   # Adjust the build command as per your project setup
 
       - name: Run the JAR file
-        run: java -jar target/dependency/library-0.0.1-SNAPSHOT.jar
+        run: java -jar target/backend-0.0.1-SNAPSHOT.jar
 
       # Step 4: Compile the Test.java file
       #- name: Compile Test.java
