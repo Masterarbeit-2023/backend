@@ -1,14 +1,23 @@
 package com.example.backend.model;
 
-public class Room {
-    public String name;
-    public String[] facilities;
-    public Rate[] rates;
+import jakarta.persistence.*;
 
-    public Room(){}
-    public Room(String name, String[] facilities, Rate[] rates) {
+@Entity
+@Table(name = "room")
+public class Room extends BaseModel {
+
+    public String name;
+    public int numberOfPersons;
+    public int roomSizeInSqm;
+
+    public boolean petsAllowed;
+
+    public Room() {
+    }
+
+    public Room(String name, Facility[] facilities, Rate[] rates, int numberOfPersons, int roomSizeInSqm, boolean petsAllowed) {
         this.name = name;
-        this.facilities = facilities;
-        this.rates = rates;
+        this.numberOfPersons = numberOfPersons;
+        this.roomSizeInSqm = roomSizeInSqm;
     }
 }

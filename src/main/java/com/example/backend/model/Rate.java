@@ -1,6 +1,10 @@
 package com.example.backend.model;
 
-public class Rate {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+public class Rate extends BaseModel {
     public String name;
     public boolean member;
     public String[] benefits;
@@ -11,5 +15,9 @@ public class Rate {
         this.member = member;
         this.benefits = benefits;
         this.price = price;
+    }
+
+    public Rate() {
+
     }
 }

@@ -1,8 +1,9 @@
 package com.example.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
 
-public class Address {
+@Entity
+public class Address extends BaseModel {
     public String street;
     public int houseNumber;
     public String postalCode;

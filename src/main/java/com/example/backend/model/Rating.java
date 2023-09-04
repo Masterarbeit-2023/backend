@@ -1,6 +1,9 @@
 package com.example.backend.model;
 
-public class Rating {
+import jakarta.persistence.Entity;
+
+@Entity
+public class Rating extends BaseModel {
     public float score;
     public int location;
     public int room;

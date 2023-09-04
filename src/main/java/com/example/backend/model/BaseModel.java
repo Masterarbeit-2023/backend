@@ -1,8 +1,13 @@
 package com.example.backend.model;
 
 import jakarta.persistence.*;
-@Entity
-public abstract class BaseModel {
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.io.Serializable;
+
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+public abstract class BaseModel  implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
