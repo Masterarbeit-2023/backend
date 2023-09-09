@@ -109,17 +109,23 @@ public class RoomController {
 
         List<RoomDto> roomDtos = new ArrayList<>();
 
+        List<Rate> rates = new ArrayList<>();
+        for (Rate item : rateRepository.findAll()) {
+            rates.add(item);
+        }
+        int counter = 0;
         for (Room room : rooms) {
             roomDtos.add(
                     new RoomDto(
                             room.id,
                             room.name,
                             new Facility[]{facilityRepository.findAll().iterator().next()},
-                            new Rate[]{rateRepository.findAll().iterator().next()},
+                            new Rate[]{rates.get(counter)},
                             room.numberOfPersons,
                             room.roomSizeInSqm
                     )
             );
+            counter++;
         }
         return ResponseEntity.ok(roomDtos);
     }
