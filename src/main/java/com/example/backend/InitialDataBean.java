@@ -1,8 +1,10 @@
 package com.example.backend;
 
+import com.example.backend.model.Extra;
 import com.example.backend.model.Facility;
 import com.example.backend.model.Rate;
 import com.example.backend.model.Room;
+import com.example.backend.repository.ExtraRepository;
 import com.example.backend.repository.FacilityRepository;
 import com.example.backend.repository.RateRepository;
 import com.example.backend.repository.RoomRepository;
@@ -26,6 +28,9 @@ public class InitialDataBean implements ApplicationListener<ApplicationReadyEven
 
     @Autowired
     private RoomRepository roomRepository;
+
+    @Autowired
+    private ExtraRepository extraRepository;
 
     /**
      * This event is executed as late as conceivably possible to indicate that
@@ -89,6 +94,45 @@ public class InitialDataBean implements ApplicationListener<ApplicationReadyEven
                         false
                 ));
             }
+        }
+
+        if (extraRepository.count() == 0) {
+            extraRepository.saveAll(
+                    Arrays.stream(
+                            new Extra[]{
+                                    new Extra(
+                                            "Mineralwasser",
+                                            "Genießen Sie eine Flasche Wasser 0,75 l bei Anreise auf Ihrem Zimmer.",
+                                            5f,
+                                            false, false, false, true
+                                    ),
+                                    new Extra(
+                                            "Sekt",
+                                            "Eine Flasche Sekt 0,75 l, als gewisses Extra für besondere Anlässe.",
+                                            25f,
+                                            false, false, false, true
+                                    ),
+                                    new Extra(
+                                            "Frühanreise",
+                                            "Nutzen Sie den Tag. Beziehen Sie Ihr Zimmer bereits ab 13:00 Uhr.",
+                                            15f,
+                                            false, true, false, true
+                                    ),
+                                    new Extra(
+                                            "Spätabreise",
+                                            "Lassen Sie den Tag gemütlich angehen. Late Check-Out um 14.00 Uhr.",
+                                            15f,
+                                            false, true, false, true
+                                    ),
+                                    new Extra(
+                                            "Hund",
+                                            "Wir freuen uns Ihren besten Freund bei uns Willkommen zu heißen!",
+                                            15f,
+                                            true, false, false, true
+                                    )
+                            }
+                    ).toList()
+            );
         }
         return;
     }
