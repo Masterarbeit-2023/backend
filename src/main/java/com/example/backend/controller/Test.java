@@ -4,7 +4,7 @@ import com.example.library.annotation.classes.ApiController;
 import com.example.library.annotation.method.ApiPostMapping;
 import org.springframework.http.ResponseEntity;
 
-@ApiController("/Test2")
+@ApiController()
 public class Test {
 
     @ApiPostMapping
