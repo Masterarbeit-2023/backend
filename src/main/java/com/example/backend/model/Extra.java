@@ -1,16 +1,20 @@
 package com.example.backend.model;
 
 import jakarta.persistence.Entity;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
+@Data
 public class Extra extends BaseModel {
-    public String name;
-    public String description;
-    public float price;
-    public boolean perDay;
-    public boolean perVisit;
-    public boolean perPerson;
-    public boolean perPiece;
+    String name;
+    String description;
+    float price;
+    boolean perDay;
+    boolean perVisit;
+    boolean perPerson;
+    boolean perPiece;
 
     public Extra() {
     }
