@@ -1,8 +1,10 @@
 package com.example.backend.model;
 
 import jakarta.persistence.Entity;
+import lombok.Data;
 
 @Entity
+@Data
 public class Address extends BaseModel {
     public String street;
     public int houseNumber;

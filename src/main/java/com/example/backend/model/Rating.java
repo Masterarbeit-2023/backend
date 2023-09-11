@@ -1,8 +1,10 @@
 package com.example.backend.model;
 
 import jakarta.persistence.Entity;
+import lombok.Data;
 
 @Entity
+@Data
 public class Rating extends BaseModel {
     public float score;
     public int location;

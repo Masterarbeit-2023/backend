@@ -2,8 +2,10 @@ package com.example.backend.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
+@Data
 public class Rate extends BaseModel {
     public String name;
     public boolean member;

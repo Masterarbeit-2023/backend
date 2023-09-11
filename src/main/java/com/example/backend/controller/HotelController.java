@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.dto.HotelDto;
 import com.example.backend.model.Address;
 import com.example.backend.model.Hotel;
 import com.example.backend.model.Rating;
@@ -16,7 +17,7 @@ import java.util.List;
 public class HotelController {
 
     @GetMapping()
-    public ResponseEntity<List<Hotel>> getHotels(
+    public ResponseEntity getHotels(
             @RequestParam(required = false) String location,
             @RequestParam(required = false) String startDate,
             @RequestParam(required = false) String endDate,
@@ -26,7 +27,7 @@ public class HotelController {
             @RequestParam(required = false) boolean petsAllowed
     ) {
         return ResponseEntity.ok(List.of(
-                new Hotel(
+                new HotelDto(
                         "Testhotel",
                         "15:00",
                         "12:00",
@@ -38,7 +39,7 @@ public class HotelController {
                         new String[]{ "kostenlose Stornierung", "Frühstück inklusive" },
                         new String[]{ "Balkon", "WLAN in der Lobby", "gratis WLAN", "Pool", "Wellness", "Parkplätze", "Klimaanlage", "Restaurant", "Hotelbar" }
                 ),
-                new Hotel(
+                new HotelDto(
                         "Testhotel2",
                         "14:00",
                         "11:00",
@@ -54,10 +55,10 @@ public class HotelController {
     }
 
     @GetMapping("/entity")
-    public ResponseEntity<Hotel> getHotel(
+    public ResponseEntity<HotelDto> getHotel(
             @RequestParam(required = false) long id
     ) {
-        Hotel hotel = new Hotel(
+        HotelDto hotel = new HotelDto(
                 "Testhotel",
                 "15:00",
                 "12:00",

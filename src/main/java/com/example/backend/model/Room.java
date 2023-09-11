@@ -1,8 +1,10 @@
 package com.example.backend.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "room")
 public class Room extends BaseModel {
 
