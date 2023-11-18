@@ -18,9 +18,9 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>io.github.masterarbeit</groupId>
+            <groupId>io.github.masterarbeit-2023</groupId>
             <artifactId>library</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
