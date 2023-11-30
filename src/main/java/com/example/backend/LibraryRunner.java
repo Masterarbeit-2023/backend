@@ -8,6 +8,7 @@ public class LibraryRunner {
     public static void main(String[] args) {
 
         String test = new Exception().getStackTrace()[0].getClassName();
-        Main.generate("", test);
+        System.out.println("Hello world");
+        //Main.generate("", test);
     }
 }
