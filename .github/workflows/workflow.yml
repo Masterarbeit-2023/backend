@@ -19,6 +19,9 @@ jobs:
         with:
           java-version: '17'  # Adjust the version as needed
           distribution: 'adopt'
+      - name: Add dependency
+        run: mvn install:install-file -Dfile="src/main/resources/library-0.0.6.jar" -DgroupId="io.github.masterarbeit-2023" -DartifactId="library" -Dversion="0.0.6" -Dpackaging="jar"
+
       - name: Build with Maven   # Replace this with your build tool (e.g., Gradle)
         run: mvn clean package   # Adjust the build command as per your project setup
 
