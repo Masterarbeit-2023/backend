@@ -22,7 +22,9 @@ jobs:
         run: mvn clean install
 
       - name: Run application
-        run: java -jar target/backend-0.0.1-SNAPSHOT.jar
+        run: |
+          cd target
+          java -jar backend-0.0.1-SNAPSHOT.jar
 
       - name: Show files
         run: |
