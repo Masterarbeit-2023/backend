@@ -26,6 +26,5 @@ jobs:
 
       - name: Show files
         run: |
-          ls
-          cd ..
+          cd target
           ls
